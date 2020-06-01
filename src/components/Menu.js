@@ -1,7 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
+  const activeStyle = {
+    color: "red",
+  };
+
   return (
     <div>
       <ul>
@@ -13,6 +17,24 @@ const Menu = () => {
         </li>
         <li>
           <Link to="/about/foo">About Foo</Link>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <NavLink exact to="/" activeStyle={activeStyle}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink exact to="/about" activeStyle={activeStyle}>
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about/foo" activeStyle={activeStyle}>
+            About Foo
+          </NavLink>
         </li>
       </ul>
       <hr />
